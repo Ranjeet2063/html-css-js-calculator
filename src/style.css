@@ -1,0 +1,225 @@
+/** ============================================
+   CALCULATOR - CSS STYLESHEET
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ============================================
+   CALCULATOR MAIN CONTAINER
+   ============================================ */
+
+.calculator {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   TITLE
+   ============================================ */
+
+.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+/* ============================================
+   DISPLAY
+   ============================================ */
+
+.display {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #00ff00;
+    font-size: 2.5em;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 70px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ============================================
+   BUTTONS GRID
+   ============================================ */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.btn {
+    padding: 20px;
+    font-size: 1.4em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Number Buttons */
+.btn.number {
+    background: #f0f0f0;
+    color: #333;
+    font-weight: 600;
+}
+
+.btn.number:hover {
+    background: #e0e0e0;
+}
+
+/* Operator Buttons */
+.btn.operator {
+    background: #667eea;
+    color: white;
+    font-weight: 700;
+}
+
+.btn.operator:hover {
+    background: #5568d3;
+}
+
+/* Clear Button */
+.btn.clear {
+    background: #f56565;
+    color: white;
+    grid-column: span 2;
+    font-weight: 700;
+}
+
+.btn.clear:hover {
+    background: #e53e3e;
+}
+
+/* Delete Button */
+.btn.delete {
+    background: #ed8936;
+    color: white;
+    font-weight: 700;
+}
+
+.btn.delete:hover {
+    background: #dd6b20;
+}
+
+/* Equal Button */
+.btn.equal {
+    background: #48bb78;
+    color: white;
+    grid-column: span 2;
+    font-weight: 700;
+    font-size: 1.6em;
+}
+
+.btn.equal:hover {
+    background: #38a169;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 600px) {
+    .calculator {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .display {
+        font-size: 2em;
+        padding: 20px;
+        min-height: 60px;
+    }
+
+    .btn {
+        padding: 18px;
+        font-size: 1.2em;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+
+    .display {
+        font-size: 1.8em;
+    }
+}
